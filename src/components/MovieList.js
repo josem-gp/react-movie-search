@@ -19,7 +19,8 @@ const MovieList = () => {
           return result.json();
         })
         .then((data) => {
-          console.log(data);
+          setMovies(data.results);
+          setError(null);
         })
         .catch((err) => {
           setError(err.message);
@@ -27,7 +28,7 @@ const MovieList = () => {
     []
   );
 
-  //   const movieData = movies.map((el) => console.log(el));
+  const movieData = movies.map((el) => console.log(el));
 
   return (
     <div className="card-list">
