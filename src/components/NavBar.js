@@ -20,6 +20,7 @@ const NavBar = (props) => {
         className="input"
         placeholder="Search a movie..."
         onChange={handleChange}
+        onClick={(e) => e.target.setSelectionRange(0, e.target.value.length)}
       ></input>
       <button className="button" onClick={handleClick}>
         Search
