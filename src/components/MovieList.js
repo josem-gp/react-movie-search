@@ -3,7 +3,7 @@ import Movie from "./Movie";
 
 const MovieList = () => {
   const api_key = process.env.REACT_APP_WEATHER_API_KEY;
-  const [error, setError] = setError(null);
+  const [error, setError] = useState(null);
 
   const movies = fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query='Fight Club'`
