@@ -4,6 +4,7 @@ const NavBar = (props) => {
   const [query, setQuery] = useState("");
 
   const handleChange = (event) => {
+    console.log(event);
     setQuery(event.target.value);
   };
 
@@ -20,6 +21,7 @@ const NavBar = (props) => {
         className="input"
         placeholder="Search a movie..."
         onChange={handleChange}
+        onKeyDown={(event) => event.key === "Enter" && handleClick(event)}
         onClick={(e) => e.target.setSelectionRange(0, e.target.value.length)}
       ></input>
       <button className="button" onClick={handleClick}>
