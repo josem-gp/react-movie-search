@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Movie from "./Movie";
 
 const MovieList = () => {
   const api_key = process.env.REACT_APP_WEATHER_API_KEY;
+  const [error, setError] = setError(null);
 
   const movies = fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query='Fight Club'`
@@ -13,11 +14,15 @@ const MovieList = () => {
       }
       result.json();
     })
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err));
+    .then((data) => {
+      setError(null);
+      console.log(data);
+    })
+    .catch((err) => setError(err.message));
 
   return (
     <div className="card-list">
+      {error && <div>{error}</div>}
       <Movie />
     </div>
   );
