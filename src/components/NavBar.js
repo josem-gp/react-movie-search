@@ -2,10 +2,10 @@ import React from "react";
 
 const NavBar = () => {
   return (
-    <div>
-      <h3>MOVIE NAME</h3>
-      <input placeholder="Search a movie..."></input>
-      <button>Search</button>
+    <div className="form">
+      <h3 className="label">MOVIE NAME</h3>
+      <input className="input" placeholder="Search a movie..."></input>
+      <button className="button">Search</button>
     </div>
   );
 };

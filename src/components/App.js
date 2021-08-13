@@ -5,7 +5,7 @@ import Title from "./Title";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Title />
       <NavBar />
       <Movie />
