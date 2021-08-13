@@ -7,7 +7,7 @@ const MovieList = (props) => {
   return (
     <div className="card-list">
       {props.error && <h1>{props.error}</h1>}
-      {movieData}
+      {movieData.length > 0 ? movieData : <h1>No movies found</h1>}
     </div>
   );
 };
