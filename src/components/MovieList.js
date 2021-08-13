@@ -28,12 +28,12 @@ const MovieList = () => {
     []
   );
 
-  const movieData = movies.map((el) => console.log(el));
+  const movieData = movies.map((el) => <Movie />);
 
   return (
     <div className="card-list">
       {error && <h1>{error}</h1>}
-      <Movie />
+      {movieData}
     </div>
   );
 };
