@@ -7,8 +7,14 @@ const MovieList = () => {
   const movies = fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query='Fight Club'`
   )
-    .then((result) => result.json())
-    .then((data) => console.log(data));
+    .then((result) => {
+      if (!result.ok) {
+        throw Error("Error: Could not fetch data for that resource");
+      }
+      result.json();
+    })
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
 
   return (
     <div className="card-list">

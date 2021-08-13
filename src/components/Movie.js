@@ -3,7 +3,10 @@ import React from "react";
 const Movie = () => {
   return (
     <div className="card">
-      <img className="card--image"></img>
+      <img
+        className="card--image"
+        src="http://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg"
+      ></img>
       <h2 className="card--title">Title</h2>
       <p>RELEASE DATE: xxxx</p>
       <p>RATING: xx</p>
