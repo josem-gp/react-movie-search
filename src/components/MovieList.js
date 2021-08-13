@@ -6,9 +6,9 @@ const MovieList = () => {
 
   const movies = fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query='Fight Club'`
-  );
-
-  console.log(movies);
+  )
+    .then((result) => result.json())
+    .then((data) => console.log(data));
 
   return (
     <div className="card-list">
