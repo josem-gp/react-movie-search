@@ -2,17 +2,11 @@ import React from "react";
 import IMAGE_NOT_FOUND from "../images/not-found.png";
 
 const Movie = (props) => {
-  const {
-    id,
-    original_title,
-    release_date,
-    overview,
-    popularity,
-    poster_path,
-  } = props.data;
+  const { original_title, release_date, overview, popularity, poster_path } =
+    props.data;
 
   return (
-    <div className="card" key={id}>
+    <div className="card">
       <img
         className="card--image"
         src={
