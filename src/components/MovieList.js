@@ -1,29 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Movie from "./Movie";
 
 const MovieList = () => {
-  const api_key = process.env.REACT_APP_WEATHER_API_KEY;
+  const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
   const [movies, setMovies] = useState([]);
+  const [query, setQuery] = useState("Fight Club");
   const [error, setError] = useState(null);
 
-  const movies = fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query='Fight Club'`
-  )
-    .then((result) => {
-      if (!result.ok) {
-        throw Error("Error: Could not fetch data for that resource");
-      }
-      result.json();
-    })
-    .then((data) => {
-      setError(null);
-      setMovies(data);
-    })
-    .catch((err) => setError(err.message));
+  useEffect(
+    () =>
+      fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`
+      )
+        .then((result) => {
+          if (!result.ok) {
+            throw Error("Error found! Couldn't connect");
+          }
+          return result.json();
+        })
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((err) => {
+          setError(err.message);
+        }),
+    []
+  );
+
+  //   const movieData = movies.map((el) => console.log(el));
 
   return (
     <div className="card-list">
-      {error && <div>{error}</div>}
+      {error && <h1>{error}</h1>}
       <Movie />
     </div>
   );
