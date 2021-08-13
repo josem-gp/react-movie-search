@@ -28,7 +28,7 @@ const MovieList = () => {
     []
   );
 
-  const movieData = movies.map((el) => <Movie />);
+  const movieData = movies.map((el) => <Movie data={el} />);
 
   return (
     <div className="card-list">
