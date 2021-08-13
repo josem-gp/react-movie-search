@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Movie from "./Movie";
 
-const MovieList = () => {
+const MovieList = (props) => {
   const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
   const [movies, setMovies] = useState([]);
-  const [query, setQuery] = useState("Fight Club");
+
   const [error, setError] = useState(null);
 
   useEffect(
     () =>
       fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`
+        // `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query="${query}"`
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=Fight Club`
       )
         .then((result) => {
           if (!result.ok) {
