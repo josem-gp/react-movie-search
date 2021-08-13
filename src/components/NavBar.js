@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const NavBar = () => {
+const NavBar = (props) => {
   const [query, setQuery] = useState("");
 
   const handleChange = (event) => {
@@ -9,7 +9,7 @@ const NavBar = () => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    setQuery();
+    props.fetchData(query);
   };
 
   return (
@@ -21,7 +21,9 @@ const NavBar = () => {
         placeholder="Search a movie..."
         onChange={handleChange}
       ></input>
-      <button className="button">Search</button>
+      <button className="button" onClick={handleClick}>
+        Search
+      </button>
     </div>
   );
 };
