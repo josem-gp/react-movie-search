@@ -1,5 +1,5 @@
 import React from "react";
-import Movie from "./Movie";
+import MovieList from "./MovieList";
 import NavBar from "./NavBar";
 import Title from "./Title";
 
@@ -8,7 +8,7 @@ function App() {
     <div className="container">
       <Title />
       <NavBar />
-      <Movie />
+      <MovieList />
     </div>
   );
 }
