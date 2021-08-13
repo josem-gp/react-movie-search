@@ -1,4 +1,5 @@
 import React from "react";
+import IMAGE_NOT_FOUND from "../images/not-found.png";
 
 const Movie = (props) => {
   const {
@@ -14,7 +15,11 @@ const Movie = (props) => {
     <div className="card" key={id}>
       <img
         className="card--image"
-        src={`http://image.tmdb.org/t/p/w500${poster_path}`}
+        src={
+          poster_path
+            ? `http://image.tmdb.org/t/p/w500${poster_path}`
+            : IMAGE_NOT_FOUND
+        }
         alt="poster_img"
       ></img>
       <h2 className="card--title">{original_title}</h2>
