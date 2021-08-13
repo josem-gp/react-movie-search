@@ -3,6 +3,7 @@ import Movie from "./Movie";
 
 const MovieList = () => {
   const api_key = process.env.REACT_APP_WEATHER_API_KEY;
+  const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
 
   const movies = fetch(
@@ -16,7 +17,7 @@ const MovieList = () => {
     })
     .then((data) => {
       setError(null);
-      console.log(data);
+      setMovies(data);
     })
     .catch((err) => setError(err.message));
 
