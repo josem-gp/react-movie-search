@@ -16,9 +16,9 @@ const Movie = (props) => {
         }
         alt="poster_img"
       ></img>
-      <h2 className="card--title">{original_title}</h2>
-      <p>RELEASE DATE: {release_date}</p>
-      <p>RATING: {popularity}</p>
+      <h3 className="card--title">{original_title}</h3>
+      <p className="small">RELEASE DATE: {release_date}</p>
+      <p className="small">RATING: {popularity}</p>
       <p>{overview}</p>
     </div>
   );

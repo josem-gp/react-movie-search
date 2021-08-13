@@ -4,7 +4,6 @@ const NavBar = (props) => {
   const [query, setQuery] = useState("");
 
   const handleChange = (event) => {
-    console.log(event);
     setQuery(event.target.value);
   };
 
